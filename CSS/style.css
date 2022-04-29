@@ -1,0 +1,127 @@
+.inline-block {
+    display: inline-block;
+    vertical-align: top;
+
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: DodgerBlue;
+  }
+  
+.flex-container > div {
+    background-color: #f1f1f1;
+    width: 33%;
+    margin: 10px;
+    margin-top: 0%;
+    padding: 0%;
+    text-align: center;
+    line-height: 75px;
+    font-size: 30px;
+  }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 80px 200px auto 30px;
+    gap: 10px;
+    background-color: #16130a;
+    border:#EEE8AA;
+    padding: 10px;
+  }
+  
+.grid-container > div {
+    background-color: rgba(#9e643c);
+    border: 1px #EEE8AA;
+    text-align: left;
+    text-emphasis-color: #ffff;
+    font-size: 30px;
+  }
+
+  .small_btn {
+    width: 100px;
+    height: 50px;
+    position: right;
+    background-color:#EEE8AA;
+    background-color: #9e643c;
+    text-decoration-color: #9e643c;
+    text-shadow: 0 0 2px #EEE8AA;
+}
+
+
+
+  .item1 {
+    grid-area: 2 / 1 / span 2 / span 3;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 1fr,1fr,1fr;
+    grid-template-areas: 0;
+  }
+
+  .item2 {
+    grid-area: 2 / 1 / span 2 / span 3;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 1fr,1fr,1fr;
+    grid-template-areas: 0;
+  }
+
+  .item3 {
+    grid-area: 2 / 1 / span 2 / span 3;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 1fr,1fr,1fr;
+    grid-template-areas: 0;
+  }
+
+  .item4 {
+    grid-area: 2 / 1 / span 2 / span 3;
+    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: 1fr,1fr,1fr;
+    grid-template-areas: 0;
+  }
+
+.logo {
+    width: 23%;
+    padding: 1%;
+    text-align: center;
+}
+
+nav {
+    width: 73%;
+    padding: 1%;
+}
+
+ul {
+    width: 50%;
+    margin-left: auto;
+}
+
+.heroImg {
+    height: 600px;
+    padding: 25px;   
+}
+
+.content {
+    width: 500px;
+    margin: 0 auto;
+}
+
+footer {
+    background-color: #373738;
+}
+
+footer ul {
+    display: inline-block;
+    vertical-align: top;
+}
+
+@media only screen and (max-width: 600px) {
+    body {
+      background-color: #16130a,#9e643c,#ffff,#869695;
+      border-color: #EEE8AA;
+      flex-direction: column;
+      width: 100%;
+      grid-template-rows: 300px 300px 300px;
+      grid-template-columns: 1fr,1fr,1fr;
+      grid-template-areas: 0;
+}
+
+}
