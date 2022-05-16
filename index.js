@@ -1,56 +1,19 @@
-let dropdowns = document.querySelectorAll('.navbar .dropdown-toggler')
-let dropdownIsOpen = false
+$(function() {
+  $('a.page-scroll').bind('click', function(event) {
+      var $anchor = $(this);
+      $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+      }, 1500, 'easeInOutExpo');
+      event.preventDefault();
+  });
+});
 
-
-if (dropdowns.length) {
- dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener('click', (event) => {
-      let target = document.querySelector(`#${event.target.dataset.dropdown}`)
-
-      if (target) {
-        if (target.classList.contains('show')) {
-          target.classList.remove('show')
-          dropdownIsOpen = false
-        } else {
-          target.classList.add('show')
-          dropdownIsOpen = true
-        }
-      }
-    })
-  })
-}
-
-
-window.addEventListener('mouseup', (event) => {
-  if (dropdownIsOpen) {
-    dropdowns.forEach((dropdownButton) => {
-      let dropdown = document.querySelector(`#${dropdownButton.dataset.dropdown}`)
-      let targetIsDropdown = dropdown == event.target
-
-      if (dropdownButton == event.target) {
-        return
-      }
-
-      if ((!targetIsDropdown) && (!dropdown.contains(event.target))) {
-        dropdown.classList.remove('show')
-      }
-    })
-  }
+// Highlight the top nav as scrolling occurs
+$('body').scrollspy({
+  target: '.navbar-fixed-top'
 })
 
-// Open links in mobiles
-function handleSmallScreens() {
-  document.querySelector('.navbar-toggler')
-    .addEventListener('click', () => {
-    let navbarMenu = document.querySelector('.navbar-menu')
-
-    if (navbarMenu.style.display === 'flex') {
-      navbarMenu.style.display = 'none'
-      return
-    }
-
-    navbarMenu.style.display = 'flex'
-  })
-}
-
-handleSmallScreens()
+// Closes the Responsive Menu on Menu Item Click
+$('.navbar-collapse ul li a').click(function() {
+  $('.navbar-toggle:visible').click();
+});
